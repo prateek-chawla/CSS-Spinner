@@ -1,5 +1,162 @@
-:root{
-    --body-clr:rgb(40,40,40);
-    --spinner-clr:rgb(80,80,80);
-    --spinner-active-clr:rgb(120,120,150);
+:root {
+	--body-clr: rgb(40, 40, 40);
+	--spinner-clr: rgb(90, 90, 90);
+	--spinner-active-clr: #aaa;
+}
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--body-clr);
+}
+
+/* Container */
+.spinner {
+	box-sizing: border-box;
+	height: 90px;
+	width: 90px;
+	position: relative;
+}
+
+/* Spinner Individual Circles */
+.spinner-circle {
+	height: 30px;
+	box-sizing: border-box;
+	position: absolute;
+	width: 30px;
+	border-radius: 50%;
+	border: 6px solid var(--spinner-clr);
+	background-color: var(--spinner-clr);
+}
+
+.active-circle {
+	background-color: var(--spinner-active-clr);
+	border-color: var(--spinner-active-clr);
+}
+
+.circle1,
+.active-circle {
+	top: 0;
+	left: 0;
+	transform: translate(0%, 0%);
+}
+
+.circle2 {
+	top: 0;
+	right: 0;
+	transform: translate(0%, 0%);
+}
+
+.circle3 {
+	bottom: 0;
+	right: 0;
+	transform: translate(0%, 0%);
+}
+
+/* Animation Classes */
+.active-circle {
+	animation: 5s active-circle infinite;
+}
+
+.circle1 {
+	animation: 5s circle1 infinite;
+}
+
+.circle2 {
+	animation: 5s circle2 infinite;
+}
+
+.circle3 {
+	animation: 5s circle3 infinite;
+}
+
+/* Animations */
+@keyframes active-circle {
+	8.33% {
+		transform: translate(0%, 200%);
+	}
+	16.67% {
+		transform: translate(200%, 200%);
+	}
+	25% {
+		transform: translate(200%, 0%);
+	}
+	33.33% {
+		transform: translate(0%, 0%);
+	}
+	41.67% {
+		transform: translate(0%, 200%);
+	}
+	50% {
+		transform: translate(200%, 200%);
+	}
+	58.33% {
+		transform: translate(200%, 0%);
+	}
+	66.67% {
+		transform: translate(0%, 0%);
+	}
+	75% {
+		transform: translate(0%, 200%);
+	}
+	83.33% {
+		transform: translate(200%, 200%);
+	}
+	91.67% {
+		transform: translate(200%, 0%);
+	}
+	100% {
+		transform: translate(0%, 0%);
+	}
+}
+
+@keyframes circle1 {
+	25% {
+		transform: translate(200%, 0%);
+	}
+	50% {
+		transform: translate(200%, 200%);
+	}
+	75% {
+		transform: translate(0%, 200%);
+	}
+	100% {
+		transform: translate(0%, 0%);
+	}
+}
+
+@keyframes circle2 {
+	16.67% {
+		transform: translate(0%, 200%);
+	}
+	41.67% {
+		transform: translate(-200%, 200%);
+	}
+	66.67% {
+		transform: translate(-200%, 0%);
+	}
+	91.67% {
+		transform: translate(0%, 0%);
+	}
+}
+
+@keyframes circle3 {
+	8.33% {
+		transform: translate(-200%, 0%);
+	}
+	33.33% {
+		transform: translate(-200%, -200%);
+	}
+	58.33% {
+		transform: translate(0%, -200%);
+	}
+	83.33% {
+		transform: translate(0%, 0%);
+	}
 }
